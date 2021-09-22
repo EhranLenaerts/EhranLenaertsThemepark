@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--Ehran_Lenaerts_R0661627-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="img/style.css" />
+    <title>New Visitor</title>
+</head>
+<body>
+<main class="container d-flex flex-column min-vh-100">
+    <div class="p-5 m-2 headerRoller">
+        <h1>New Visitor</h1>
+    </div>
+
+    <div class="row m-2">
+    <form action="/enterVisitor">
+        <p class="col-12">
+            <label class="col-2 col-form-label" for="firstName">First name</label>
+            <input class="col-7" type="text" name="firstName" id="firstName">
+        </p>
+        <p class="col-12">
+            <label class="col-2 col-form-label" for="Surname">Surname</label>
+            <input class="col-7" type="text" name="Surname" id="Surname">
+        </p>
+        <p class="col-12">
+            <label class="col-2 col-form-label" for="birthDateYear">Year of birth</label>
+            <input class="col-7" type="text" name="yearOfBirth" id="birthDateYear">
+        </p>
+        <p class="col-12" th:each="park : ${themeParks}">
+            <input class="col-2" type="radio" name="ThemeParks"
+            th:value="${parkStat.index}"
+            th:id="${parkStat.index}"
+            th:checked="${parkStat.index} == 0"/>
+            <label class="col-7 col-form-label" th:for="${parkStat.index}"
+            th:text="${park.getName()}"></label>
+
+        </p>
+        <p class="col-12">
+            <input class="btn btn-primary col-3 mx-3" type="submit" name="submitNewVisitor" value="continue and generate park code">
+        </p>
+    </form>
+    </div>
+    <p><a href="/">Back to home</a></p>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

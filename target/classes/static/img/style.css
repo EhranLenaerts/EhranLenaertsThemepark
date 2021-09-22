@@ -1,0 +1,20 @@
+/*add a self-selected stylesheet here
+// Ehran_Lenaerts_R0661627
+*/
+
+body {
+    background-color: lightcoral;
+}
+main {
+    background-color: lightgray;
+}
+
+.welcome {
+
+}
+.headerRoller {
+    background-image: url('sky scream.jpg');
+    background-position: center;
+    background-size: cover;
+    color: white;
+}

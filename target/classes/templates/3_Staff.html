@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--Ehran_Lenaerts_R0661627-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="img/style.css" />
+    <title>Staff input</title>
+</head>
+<body>
+<main class="container d-flex flex-column min-vh-100">
+    <div class="p-5 m-2 headerRoller">
+        <h1>New staff member</h1>
+    </div>
+    <div class="row m-2">
+    <form action="newStaff">
+        <p class="col-12">
+            <label class="col-2 col-form-label" for="staffFirstName">First name</label>
+            <input class="col-7" type="text" name="staffFirstName" id="staffFirstName">
+        </p>
+        <p class="col-12">
+            <label  class="col-2 col-form-label" for="staffSurname">Surname</label>
+            <input class="col-7" type="text" name="staffSurname" id="staffSurname">
+        </p>
+        <p class="col-12">
+            <label class="col-2 col-form-label" for="employedtime">Employed since (dd/MM/yyyy)</label>
+            <input class="col-7" type="text" name="employedtime" id="employedtime">
+        </p>
+        <p class="col-12">
+            <label class="col-2 col-form-label" for="workStudent">Working student?</label>
+            <input class="col-2" type="checkbox" name="workStudent" id="workStudent">
+        </p>
+        <p class="col-12">
+            <select name="employedAt">
+                <option value="-1">Employed at which theme park?</option>
+                <option th:each="park : ${themeParks}"
+                        th:text="${park.getName()}"
+                        th:value="${parkStat.index}"></option>
+            </select>
+        </p>
+        <p class="col-12">
+            <input class="btn btn-primary col-3 mx-3" type="submit" name="submitNewStaff" value="Confirm staff member">
+        </p>
+    </form>
+    </div>
+    <a href="/">Back to home page</a>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

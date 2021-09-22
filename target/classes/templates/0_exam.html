@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--Ehran_Lenaerts_R0661627-->
+    <meta charset="UTF-8">
+    <title>Exam stuff</title>
+</head>
+<body>
+<main class="">
+    <h1>New staff member</h1>
+    <div class="">
+        <p th:text="${newStaff.getFirstName()} + ' ' + ${newStaff.getSurName().substring(0,1)} + ${newStaff.getSurName().substring(1).toLowerCase()}"></p>
+        <p th:text="'Employed at ' + ${newStaff.getEmployedAt().getName()}"></p>
+    </div>
+    <a href="/">Back to home page</a>
+</main>
+</body>
+</html>
