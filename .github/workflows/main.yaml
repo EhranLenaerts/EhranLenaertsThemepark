@@ -3,7 +3,7 @@ name: Trying to upload and deploy to Heroku
 on:
     push:
         branches:
-            - master
+            - main
 
 jobs:
     build:
