@@ -1,17 +1,15 @@
 name: Trying to upload and deploy to Heroku
 
-on:
-    push:
-        branches:
-            - main
+on: push
 
 jobs:
-    build:
+    deploy:
         runs-on: ubuntu-latest
+        name: deploy heroku
         steps:
             - uses: actions/checkout@v2
             - uses: akhileshns/heroku-deploy@v3.12.12
-            with:
+              with:
                 heroku_api_key: ${{secrets.HEROKU_API_KEY}}
                 heroku_app_name: "java-project-school-ehran"
                 heroku_email: "r0661627@student.thomasmore.be"
