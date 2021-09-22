@@ -14,5 +14,5 @@ jobs:
             with:
                 heroku_api_key: ${{secrets.HEROKU_API_KEY}}
                 heroku_app_name: "java-project-school-ehran"
-                heroku_email: "r0661627@student.thomasmmore.be"
+                heroku_email: "r0661627@student.thomasmore.be"
         
