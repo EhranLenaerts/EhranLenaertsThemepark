@@ -22,7 +22,7 @@ jobs:
               uses: actions/checkout@v2
             - name: perfom test from command-line
               shell: pwsh
-              run: Test-Path src/main | Should -Be $true
+              run: Test-Path pom.xml | Should -Be $true
             - name: test from file
               shell: pwsh
               run: Invoke-Pester Unit.Tests.ps1 -Passthru
